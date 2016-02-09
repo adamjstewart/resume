@@ -1,11 +1,11 @@
 {
     "folders":
-	[
-		{
-			"path": ".",
+    [
+        {
+            "path": ".",
             "file_include_patterns": ["*.tex", "*.sublime-project"]
-		}
-	],
+        }
+    ],
     "settings":
     [
     ],
