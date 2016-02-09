@@ -10,5 +10,5 @@ To download, simply clone the repository:
 git clone https://github.com/adamjstewart/resume.git
 ```
 
-On OS X, I am using [MacTeX](https://tug.org/mactex/) for LaTeX compilation, [Sublime Text](http://www.sublimetext.com/) as my editor, and the [LaTeXTools](https://github.com/SublimeText/LaTeXTools) plugin for Sublime. One of the benefits of LaTeXTools is that you can specify the relative path to the main resume.tex file from any section file through the `%!TEX root` command. Then, when you press `<Cmd>+D`, it builds the main file, not the section file. See the installation instructions for MacTeX, Sublime Text, and LaTeXTools to get them up and running.
+On OS X, I am using [MacTeX](https://tug.org/mactex/) for LaTeX compilation, [Sublime Text](http://www.sublimetext.com/) as my editor, and the [LaTeXTools](https://github.com/SublimeText/LaTeXTools) plugin for Sublime. One of the benefits of LaTeXTools is that you can specify the relative path to the main resume.tex file from any section file through the `%!TEX root` command. Then, when you press <kbd>&#8984;</kbd>+<kbd>B</kbd>, it builds the main file, not the section file. See the installation instructions for MacTeX, Sublime Text, and LaTeXTools to get them up and running.
 
