@@ -3,7 +3,7 @@
     [
         {
             "path": ".",
-            "file_include_patterns": ["*.tex", "*.sublime-project"]
+            "file_include_patterns": ["*.md", "*.tex", "*.sublime-project"]
         }
     ],
     "settings":
