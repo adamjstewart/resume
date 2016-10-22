@@ -29,3 +29,9 @@
     {0pt} % horizontal separation from left margin
     {8pt} % vertical spacing before title
     {5pt} % vertical spacing after title
+
+% Add sections to the input path
+
+\makeatletter % changes the catcode of @ to 11
+\def\input@path{{sections/}}
+\makeatother  % changes the catcode of @ back to 12
