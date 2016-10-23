@@ -1,33 +1,52 @@
-% Typography
+% Identification
 
-\usepackage[defaultsans]{droidsans}
-\usepackage{textcomp}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{resume}[2016/10/23 My custom résumé class]
 
-\renewcommand{\familydefault}{\sfdefault}
 
-% Section Title Formatting
+% Preliminary Declarations
 
-% http://texdoc.net/texmf-dist/doc/latex/titlesec/titlesec.pdf
-\usepackage{titlesec}
+% Extend the article class
+\LoadClass[letterpaper,11pt]{article}
 
+% Typography packages
+\RequirePackage[defaultsans]{droidsans}
+\RequirePackage{textcomp}
+
+% Title and list formatting packages
+\RequirePackage{titlesec}
+\RequirePackage{enumitem}
+\RequirePackage{calc}
+
+% General formatting
+\RequirePackage[margin=0.5in]{geometry}
+\RequirePackage{multicol}
+\RequirePackage{hyperref}
+
+
+% Options
+
+% Pass all undefined options to the 'article' class
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+\ProcessOptions\relax
+
+
+% More Declarations
+
+% Section title formatting
 \titleformat{\section}
     {\bfseries\scshape} % format to be applied to the whole title
     {}                  % label
     {0pt}               % horizontal separation between label and title body
     {}                  % code preceding the title body
-    [\hrule]            % code following the title body
+    [\titlerule]        % code following the title body
 
 \titlespacing*{\section}
     {0pt}               % horizontal separation from left margin
     {8pt}               % vertical spacing before title
     {5pt}               % vertical spacing after title
 
-% List Formatting
-
-% http://texdoc.net/texmf-dist/doc/latex/enumitem/enumitem.pdf
-\usepackage{enumitem}
-\usepackage{calc}
-
+% List formatting
 \setlist[itemize]{
     % Vertical spacing
     topsep=3pt,         % space between first item and preceding paragraph
@@ -58,16 +77,10 @@
     itemindent=0pt      % extra indentation in front of item label
 }
 
-% General Formatting
-
-\usepackage[margin=0.5in]{geometry}
-\usepackage{multicol}
-\usepackage{hyperref}
+\renewcommand{\familydefault}{\sfdefault}
 
 \pagestyle{empty}           % turn off page numbering
 \setlength{\parindent}{0pt} % turn off indentation
 
-% Add sections to the input path
-\makeatletter % changes the catcode of @ to 11
+% Add 'sections' to the input path
 \def\input@path{{sections/}}
-\makeatother  % changes the catcode of @ back to 12
