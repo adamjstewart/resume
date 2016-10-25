@@ -1,0 +1,152 @@
+% Identification
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{contact}[2016/10/23 Title with contact information]
+
+
+% Preliminary Declarations
+
+\RequirePackage{kvoptions}
+\RequirePackage{multicol}
+\RequirePackage{hyperref}
+
+\newcommand*{\name}[1]{
+    \gdef\@name{\textbf{\textsc{\Large #1}}}
+}
+\newcommand*{\email}[1]{
+    \gdef\@email{\href{mailto:#1}{#1}}
+}
+\newcommand*{\phone}[1]{
+    \gdef\@phone{#1}
+}
+\newcommand*{\website}[1]{
+    \gdef\@website{\href{#1}{#1}}
+}
+\newcommand*{\currentaddress}[2]{
+    \gdef\@currentaddressone{#1}
+    \gdef\@currentaddresstwo{#2}
+}
+\newcommand*{\permanentaddress}[2]{
+    \gdef\@permanentaddressone{#1}
+    \gdef\@permanentaddresstwo{#2}
+}
+
+
+% Options
+
+\DeclareStringOption[1]{columns}
+\ProcessKeyvalOptions*
+
+
+% More declarations
+
+\ifcase\contact@columns
+\or
+    % Single-column title
+    \renewcommand{\maketitle}{
+
+        \begin{center}
+
+            \@name
+
+            \@permanentaddressone, \@permanentaddresstwo
+
+            \@email --- \@phone
+
+            \@website
+
+        \end{center}
+
+        \vspace{-14pt}
+    }
+\or
+    % Double-column title
+    \renewcommand{\maketitle}{
+
+        \begin{center}
+
+            \@name
+
+            \@website
+
+        \end{center}
+
+        \vspace{-12pt}
+
+        \begin{multicols}{2}
+
+            \begin{flushleft}
+
+                \textbf{Current Address}
+
+                \@currentaddressone
+
+                \@currentaddresstwo
+
+            \end{flushleft}
+
+            \columnbreak
+
+            \begin{flushright}
+
+                \textbf{Contact Information}
+
+                \@email
+
+                \@phone
+
+            \end{flushright}
+
+        \end{multicols}
+    }
+\or
+    % Triple-column title
+    \renewcommand{\maketitle}{
+
+        \begin{center}
+
+            \@name
+
+        \end{center}
+
+        \vspace{-12pt}
+
+        \begin{multicols}{3}
+
+            \begin{flushleft}
+
+                \textbf{Current Address}
+
+                \@currentaddressone
+
+                \@currentaddresstwo
+
+            \end{flushleft}
+
+            \columnbreak
+
+            \begin{center}
+
+                \@email
+
+                \@phone
+
+                \@website
+
+            \end{center}
+
+            \columnbreak
+
+            \begin{flushright}
+
+                \textbf{Permanent Address}
+
+                \@permanentaddressone
+
+                \@permanentaddresstwo
+
+            \end{flushright}
+
+        \end{multicols}
+    }
+\fi

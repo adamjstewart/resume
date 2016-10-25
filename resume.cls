@@ -18,10 +18,8 @@
 \RequirePackage{enumitem}
 \RequirePackage{calc}
 
-% General formatting
+% Margins
 \RequirePackage[margin=0.5in]{geometry}
-\RequirePackage{multicol}
-\RequirePackage{hyperref}
 
 
 % Options
