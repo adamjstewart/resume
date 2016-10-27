@@ -6,7 +6,19 @@
 
 My résumé and CV are designed as [Modular LaTeX Documents](https://en.wikibooks.org/wiki/LaTeX/Modular_Documents). Each section is stored as a standalone LaTeX file, and is added to the main `resume.tex` and `cv.tex` files with the use of the `\input` command. The main advantage of this design is that you can edit a single section and simultaneously update your résumé and CV, ensuring that they both stay up-to-date.
 
-By commenting out certain input commands, you can exclude sections that don't fit or that you no longer want to include. This way, the section is not deleted forever, and can easily be re-added later. You can also store multiple versions of the same file, like I did with my `header_*.tex` files, and switch between them to see how they look.
+### resume.cls
+
+In order to achieve my goal of simplicity, I created a `resume` document class that extends `article`. This class handles everything from section title formatting to margins. You can use this class by adding the following line to your main LaTeX file:
+```latex
+\documentclass{resume}
+```
+
+### contact.sty
+
+I also created a `contact` package that handles the contact section at the top of the résumé. It provides commands such as `\name{}` and `\email{}` to specify contact information, and it overrides the `\maketitle` implementation to provide a more appropriate title. It defaults to a single column title, but also supports 2 and 3 column titles with the use of the `columns` optional parameter:
+```latex
+\usepackage[columns=3]{contact}
+```
 
 ## Installation
 
