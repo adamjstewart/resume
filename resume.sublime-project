@@ -8,7 +8,7 @@
     ],
     "settings":
     {
-        // "TEXroot": "cv.tex"
-        "TEXroot": "resume.tex"
+        "TEXroot": "cv.tex"
+        // "TEXroot": "resume.tex"
     }
 }

@@ -31,6 +31,15 @@
 
 % More Declarations
 
+% Use sans serif font
+\renewcommand{\familydefault}{\sfdefault}
+
+% Turn off page numbering
+\pagestyle{empty}
+
+% Turn off indentation
+\setlength{\parindent}{0pt}
+
 % Section title formatting
 \titleformat{\section}
     {\bfseries\scshape} % format to be applied to the whole title
@@ -43,6 +52,18 @@
     {0pt}               % horizontal separation from left margin
     {8pt}               % vertical spacing before title
     {5pt}               % vertical spacing after title
+
+% Subsection title formatting
+\titleformat{\subsection}
+    {\bfseries}         % format to be applied to the whole title
+    {}                  % label
+    {0pt}               % horizontal separation between label and title body
+    {}                  % code preceding the title body
+
+\titlespacing*{\subsection}
+    {0pt}               % horizontal separation from left margin
+    {8pt}               % vertical spacing before title
+    {0pt}               % vertical spacing after title
 
 % List formatting
 \setlist[itemize]{
@@ -74,11 +95,6 @@
     labelsep=0.5em,     % space between the end of the label box and the start of the first item
     itemindent=0pt      % extra indentation in front of item label
 }
-
-\renewcommand{\familydefault}{\sfdefault}
-
-\pagestyle{empty}           % turn off page numbering
-\setlength{\parindent}{0pt} % turn off indentation
 
 % Add 'sections' to the input path
 \def\input@path{{sections/}}
