@@ -19,7 +19,7 @@
 \RequirePackage{calc}
 
 % Margins
-\RequirePackage[margin=0.5in]{geometry}
+\RequirePackage[left=0.5in,right=0.5in,top=0.75in,bottom=0.75in]{geometry}
 
 
 % Options
